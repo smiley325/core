@@ -39,8 +39,8 @@ Elm.Native.Http.make = function(elm) {
                 response.value = (request.status >= 200 && request.status < 300 ?
                                   { ctor:'Success', _0:request.responseText } :
                                   { ctor:'Failure', _0:request.status, _1:request.statusText });
-                setTimeout(function() { updateQueue(queue,responses); }, 0);
             }
+            setTimeout(function() { updateQueue(queue,responses); }, 0);
         };
         request.open(req.verb, req.url, true);
         function setHeader(pair) {
